@@ -1,0 +1,15 @@
+### PhpStorm ###
+/.idea/*
+
+### dotenv ###
+.env
+
+### Composer ###
+composer.phar
+/vendor/
+composer.lock
+
+# docker file
+/docker/logs
+/docker/php/bash
+
