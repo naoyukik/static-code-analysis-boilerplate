@@ -5,9 +5,9 @@ services:
       context: .
       dockerfile: ./docker/php/Dockerfile
       target: with_xdebug
-    image: docker-php:latest
+    image: ${COMPOSE_PROJECT_NAME}:latest
     volumes:
-      - /app
+      - ./:/app
       - /app/vendor
     environment:
       - XDEBUG_LOAD_MODULE=${XDEBUG_LOAD_MODULE}
@@ -17,7 +17,7 @@ services:
       - XDEBUG_CLIENT_PORT=${XDEBUG_CLIENT_PORT}
       - XDEBUG_IDEKEY=${XDEBUG_IDEKEY}
     networks:
-      - docker-php
+      - ${COMPOSE_PROJECT_NAME}
 networks:
-  docker-php:
+  custom-rules-for-static-code-analysis:
     driver: bridge

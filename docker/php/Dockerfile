@@ -14,18 +14,18 @@ ENV TZ=UTC \
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 COPY docker/php/entrypoint.sh /entrypoint.sh
 
-RUN apt-get update \
-    && apt-get -y install git libicu-dev libonig-dev libzip-dev unzip locales libcurl4-openssl-dev \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/* \
-    && locale-gen en_US.UTF-8 \
-    && localedef -f UTF-8 -i en_US en_US.UTF-8 \
-    && mkdir /var/run/php-fpm \
-    && composer config -g process-timeout 3600 \
-    && composer config -g repos.packagist composer https://packagist.jp \
-    && mkdir /entrypoint.d \
-    && chmod 777 /entrypoint.d \
-    && chmod +x /entrypoint.sh
+RUN apt-get update
+RUN apt-get -y install git libicu-dev libonig-dev libzip-dev unzip locales libcurl4-openssl-dev
+RUN apt-get clean
+RUN rm -rf /var/lib/apt/lists/*
+RUN locale-gen en_US.UTF-8
+RUN localedef -f UTF-8 -i en_US en_US.UTF-8
+RUN mkdir /var/run/php-fpm
+RUN composer config -g process-timeout 3600
+RUN composer config -g repos.packagist composer https://packagist.jp
+RUN mkdir /entrypoint.d
+RUN chmod 777 /entrypoint.d
+RUN chmod +x /entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh"]
 CMD ["php-fpm", "-F", "--pid", "/opt/bitnami/php/tmp/php-fpm.pid", "-y", "/opt/bitnami/php/etc/php-fpm.conf"]
@@ -35,15 +35,15 @@ WORKDIR /app
 FROM base_php as composer_install
 
 ADD composer.json /app/composer.json
-RUN composer install \
-    && cp /app/composer.json /tmp/composer.json \
-    && cp /app/composer.lock /tmp/composer.lock
+RUN composer install
+RUN cp /app/composer.json /tmp/composer.json
+RUN cp /app/composer.lock /tmp/composer.lock
 
 FROM base_php as build_xdebug
-RUN apt-get update \
-    && apt-get -y install build-essential autoconf \
-    && apt-get clean \
-    && pecl install xdebug pcov
+RUN apt-get update
+RUN apt-get -y install build-essential autoconf
+RUN apt-get clean
+RUN pecl install xdebug pcov
 
 FROM composer_install as with_xdebug
 COPY --from=build_xdebug /opt/bitnami/php/lib/php/extensions/xdebug.so /opt/bitnami/php/lib/php/extensions/xdebug.so
