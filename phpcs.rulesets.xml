@@ -1,6 +1,11 @@
 <?xml version="1.0"?>
 <ruleset name="Selective Standard">
     <arg value="s"/>
+    <arg name="report" value="code"/>
+    <arg name="report-width" value="160"/>
+
     <rule ref="PSR12"/>
-    <rule ref="Squiz"/>
+    <rule ref="Squiz">
+        <exclude name="Squiz.Commenting.ClosingDeclarationComment.Missing"/>
+    </rule>
 </ruleset>
