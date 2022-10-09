@@ -3,9 +3,16 @@
     <arg value="s"/>
     <arg name="report" value="code"/>
     <arg name="report-width" value="160"/>
+    <arg name="bootstrap" value="vendor/zebra-north/phpcs-short-types/short-types.php"/>
 
-    <rule ref="PSR12"/>
-    <rule ref="Squiz">
-        <exclude name="Squiz.Commenting.ClosingDeclarationComment.Missing"/>
-    </rule>
+    <rule ref="CakePHP"/>
+
+<!--    <rule ref="PSR12">-->
+<!--        <exclude name="Generic.Formatting.MultipleStatementAlignment.NotSame"/>-->
+<!--    </rule>-->
+
+<!--    <rule ref="Squiz">-->
+<!--        <exclude name="Squiz.Commenting.ClosingDeclarationComment.Missing"/>-->
+<!--        <exclude name="Squiz.Arrays.ArrayDeclaration.DoubleArrowNotAligned"/>-->
+<!--    </rule>-->
 </ruleset>

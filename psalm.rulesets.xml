@@ -8,6 +8,7 @@
 >
     <projectFiles>
         <file name="./src/PsalmSample.php" />
+        <file name="./src/PhpSample.php" />
         <ignoreFiles>
             <directory name="vendor" />
         </ignoreFiles>
