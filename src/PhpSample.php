@@ -5,12 +5,14 @@ use App\PsalmSample;
 
 class PhpAllSample
 {
+    private $_string = 'string';
+
     /**
      * @param integer $param
      */
     public function bar($param)
     {
-        $oneLineArray = ['ham','egg'];
+        $oneLineArray = ['ham',$this->_string];
         $list = [
             'ham',
             'egg',
@@ -30,14 +32,14 @@ class PhpAllSample
     }
 
     /**
-     * @param int $integer number
+     * @param int $integer
      * @param string $str string
      * @param array $arr
      */
     function foo_Bar(int $integer, $str, $arr) {
     }
 
-    public function fooBar(): void {
+    private function _fooBar(): void {
     }
-
 }
+

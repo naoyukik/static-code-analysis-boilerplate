@@ -1,9 +1,9 @@
-# docker-php
-Simple PHP environment.
+# custom-rules-for-static-code-analysis
 
 ## initial
 ```bash
 cp .env.example .env
+docker compose up -d 
 ```
 Change `COMPOSE_PROJECT_NAME` in .env
 

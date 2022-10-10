@@ -1,11 +1,10 @@
 {
-    "require": {
-    },
     "require-dev": {
-        "squizlabs/php_codesniffer": "*",
-        "phpmd/phpmd" : "@stable",
-        "vimeo/psalm": "^4.27",
         "cakephp/cakephp-codesniffer": "^4.6",
+        "dealerdirect/phpcodesniffer-composer-installer": "^0.7.2",
+        "phpmd/phpmd": "@stable",
+        "squizlabs/php_codesniffer": "*",
+        "vimeo/psalm": "^4.27",
         "zebra-north/phpcs-short-types": "^1.0"
     },
     "autoload": {
