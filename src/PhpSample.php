@@ -23,12 +23,13 @@ class PhpAllSample
             'ba' => 1
         ];
         $unusedCode = [];
-        $array[] = $undefined;
-        if ($param == 42 && $array) {
+        $array[] = $undefinedVariable;
+
+        if ($param == 42) {
             exit(23);
         }
         var_dump('string');
-
+        return $array;
     }
 
     /**
@@ -37,7 +38,11 @@ class PhpAllSample
      * @param array $arr
      */
     function foo_Bar(int $integer, $str, $arr) {
+        $file = @fopen($filPath); // hides exceptions
+        $key = @$array[$notExistingKey]; // assigns null to $key
+        return new \stdClass();
     }
+
 
     private function _fooBar(): void {
     }

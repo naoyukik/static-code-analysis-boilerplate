@@ -173,4 +173,8 @@
     </rule>
 
     <!-- All rules in ./Sniffs are included automatically -->
+
+    <!-- custom-rules-forstatic-code-analysis -->
+    <rule ref="Squiz.Operators.ComparisonOperatorUsage"/>
+
 </ruleset>
