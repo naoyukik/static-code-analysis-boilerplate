@@ -155,3 +155,5 @@ composer.lock
 /docker/logs
 /docker/php/bash
 
+/package-lock.json
+/pnpm-lock.yaml
