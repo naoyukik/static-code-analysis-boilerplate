@@ -1,0 +1,24 @@
+version: 1.0
+failThreshold: 0
+profile:
+  name: qodana.recommended
+#  path: ./qodana/options/qodana-inspection-profile.xml
+include:
+  - name: PhpCompoundNamespaceDepthInspection
+  - name: PhpDocDuplicateTypeInspection
+  - name: PhpDocFieldTypeMismatchInspection
+  - name: PhpDocSignatureInspection
+  - name: PhpLongTypeFormInspection
+  - name: PhpMissingVisibilityInspection
+  - name: PhpModifierOrderInspection
+  - name: PhpNewClassMissingParameterListInspection
+  - name: PhpReturnDocTypeMismatchInspection
+  - name: PhpSeparateElseIfInspection
+  - name: PhpTraitsUseListInspection
+  - name: PhpVarUsageInspection
+  - name: PsalmGlobal
+exclude:
+  - name: PhpCSFixerValidationInspection
+  - name: All
+    paths:
+      - node_modules

@@ -16,8 +16,13 @@ services:
       - XDEBUG_CLIENT_HOST=${XDEBUG_CLIENT_HOST}
       - XDEBUG_CLIENT_PORT=${XDEBUG_CLIENT_PORT}
       - XDEBUG_IDEKEY=${XDEBUG_IDEKEY}
-    networks:
-      - ${COMPOSE_PROJECT_NAME}
-networks:
-  custom-rules-for-static-code-analysis:
-    driver: bridge
+  qodana:
+    image: jetbrains/qodana-php:latest
+    ports:
+      - 8080:8080
+    volumes:
+      - ./:/data/project
+      - ./qodana/logs:/data/results/
+      - ./qodana/plugins/PhpInspectionsEA.jar:/opt/idea/plugins/PhpInspectionsEA.jar
+      - ./qodana/options/ea_extended.xml:/root/.config/idea/options/ea_extended.xml
+    command: ["--show-report", "--save-report"]
