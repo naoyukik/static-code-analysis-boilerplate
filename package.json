@@ -3,7 +3,8 @@
   "version": "1.1.0",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint -f @microsoft/eslint-formatter-sarif -o eslint_results.sarif '{src/**/*,*}.{js,ts,jsx,tsx,vue}'"
+    "lint": "eslint '{src/**/*,*}.{js,ts,jsx,tsx,vue}'",
+    "lint:sarif": "eslint -f @microsoft/eslint-formatter-sarif -o eslint_results.sarif '{src/**/*,*}.{js,ts,jsx,tsx,vue}'"
   },
   "keywords": [
     "ESLint",
