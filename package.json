@@ -1,12 +1,16 @@
 {
   "name": "custom-rules-for-static-code-analysis",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.1.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint '{src/**/*,*}.{js,ts,jsx,tsx,vue}'",
+    "lint:sarif": "eslint -f @microsoft/eslint-formatter-sarif -o eslint_results.sarif '{src/**/*,*}.{js,ts,jsx,tsx,vue}'"
   },
-  "keywords": ["ESLint","Airbnb","React"],
+  "keywords": [
+    "ESLint",
+    "Airbnb",
+    "React"
+  ],
   "author": "naoyukik",
   "license": "MIT",
   "devDependencies": {
