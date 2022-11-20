@@ -3,5 +3,4 @@ psalm:
 phpcs:
 	docker compose -f ./docker-compose.yml exec -T app vendor/bin/phpcs --standard=./phpcs.rulesets.xml ./src/PhpSample.php
 phpmd:
-	docker compose -f ./docker-compose.yml exec -T app vendor/bin/phpmd ./src/PhpmdSample.php,./src/PhpSample.php text ./phpmd.rulesets.xml
-
+	docker compose -f ./docker-compose.yml exec -T app vendor/bin/phpmd ./src/PhpSample.php text ./phpmd.rulesets.xml

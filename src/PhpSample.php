@@ -47,4 +47,3 @@ class PhpAllSample
     private function _fooBar(): void {
     }
 }
-

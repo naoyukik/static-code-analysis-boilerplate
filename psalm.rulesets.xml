@@ -7,7 +7,6 @@
     xsi:schemaLocation="https://getpsalm.org/schema/config vendor/vimeo/psalm/config.xsd"
 >
     <projectFiles>
-        <file name="./src/PsalmSample.php" />
         <file name="./src/PhpSample.php" />
         <ignoreFiles>
             <directory name="vendor" />
