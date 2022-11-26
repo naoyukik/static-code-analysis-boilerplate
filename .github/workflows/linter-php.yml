@@ -4,7 +4,7 @@ on:
   push:
 
 jobs:
-  phpcs:
+  PHP_CodeSniffer:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -13,3 +13,9 @@ jobs:
       - run: echo "::add-matcher::.github/problem-matcher.json"
       - name: Run PHPCS
         run: ./vendor/bin/phpcs --report=checkstyle --standard=./phpcs.rulesets.xml ./src/PhpSample.php || true
+  Psalm:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Psalm
+        uses: docker://vimeo/psalm-github-actions
