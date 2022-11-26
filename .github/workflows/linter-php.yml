@@ -21,3 +21,11 @@ jobs:
         run: composer install
       - name: Run Psalm
         run: ./vendor/bin/psalm --output-format=github --no-cache || true
+  PHP_Mess_Detector:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run Composer Install
+        run: composer install
+      - name: Run PHPMD
+        run: vendor/bin/phpmd ./src/PhpSample.php github ./phpmd.xml || true
