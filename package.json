@@ -5,7 +5,7 @@
   "scripts": {
     "lint": "eslint '{src/**/*,*}.{js,ts,jsx,tsx,vue}'",
     "lint:sarif": "eslint -f @microsoft/eslint-formatter-sarif -o eslint_results.sarif '{src/**/*,*}.{js,ts,jsx,tsx,vue}'",
-    "textlint": "textlint src/**/*.md"
+    "textlint": "textlint -f checkstyle src/**/*.md"
   },
   "keywords": [
     "ESLint",

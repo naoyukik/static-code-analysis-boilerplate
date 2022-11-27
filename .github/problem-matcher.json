@@ -1,7 +1,7 @@
 {
     "problemMatcher": [
         {
-            "owner": "phpcs",
+            "owner": "CheckStyle",
             "severity": "error",
             "pattern": [
                 {
