@@ -15,4 +15,4 @@ jobs:
         run: npm install
       - run: echo "::add-matcher::.github/problem-matcher.json"
       - name: Run textlint
-        run: npm run textlint | sed 's/></>\n</g' || true
+        run: npm run textlint || true
