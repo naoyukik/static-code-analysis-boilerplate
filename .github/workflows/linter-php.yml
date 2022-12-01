@@ -12,7 +12,7 @@ jobs:
         run: composer install
       - run: echo "::add-matcher::.github/problem-matcher.json"
       - name: Run PHPCS
-        run: ./vendor/bin/phpcs --report=checkstyle --standard=./phpcs.rulesets.xml ./src/PhpSample.php || true
+        run: ./vendor/bin/phpcs --report=checkstyle --standard=./phpcs.xml ./src/PhpSample.php || true
   Psalm:
     runs-on: ubuntu-latest
     steps:
