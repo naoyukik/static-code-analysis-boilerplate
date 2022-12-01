@@ -2,7 +2,6 @@ version: 1.0
 failThreshold: 0
 profile:
   name: qodana.recommended
-#  path: ./qodana/options/qodana-inspection-profile.xml
 include:
   - name: PhpCompoundNamespaceDepthInspection
   - name: PhpDocDuplicateTypeInspection
@@ -17,6 +16,13 @@ include:
   - name: PhpTraitsUseListInspection
   - name: PhpVarUsageInspection
   - name: PsalmGlobal
+  - name: TypeScriptValidateTypes
+  - name: JSEqualityComparisonWithCoercion.TS
+  - name: TypeScriptValidateGenericTypes
+  - name: TypeScriptValidateJSTypes
+  - name: TypeScriptJSXUnresolvedComponent
+  - name: ES6ConvertVarToLetConst
+  - name: ES6ConvertLetToConst
 exclude:
   - name: PhpCSFixerValidationInspection
   - name: All
