@@ -1,13 +1,13 @@
 {
   "name": "naoyukik/custom-rules-for-static-code-analysis",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "license": "MIT",
   "authors": [
     {
       "name": "naoyukik"
     }],
   "require-dev": {
-    "cakephp/cakephp-codesniffer": "^4.6",
+    "cakephp/cakephp-codesniffer": "^5.0",
     "dealerdirect/phpcodesniffer-composer-installer": "^0.7.2",
     "phpmd/phpmd": "@stable",
     "squizlabs/php_codesniffer": "*",
