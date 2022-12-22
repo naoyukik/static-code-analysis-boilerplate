@@ -1,0 +1,20 @@
+name: "PHP analysis"
+
+on:
+  pull_request:
+
+jobs:
+  PHP_CodeSniffer_with_reviewdog:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run Composer Install
+        run: composer install
+      - name: Reviewdog Install
+        run: curl -sfL https://raw.githubusercontent.com/reviewdog/reviewdog/master/install.sh| sh -s -- -b ./bin
+      - run: echo "::add-matcher::.github/problem-matcher.json"
+      - name: Run PHPCS
+        env:
+          REVIEWDOG_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: ./vendor/bin/phpcs --report=emacs --standard=./phpcs.xml ./src/PhpSample.php \
+          | ./bin/reviewdog -efm='%f:%l:%c:%m' -reporter=github-pr-review
