@@ -29,6 +29,11 @@ class PhpAllSample
         if ($param == 42) {
             exit(23);
         }
+
+        if ($param == 421) {
+            exit(23);
+        }
+
         var_dump('string');
         return $array;
     }
