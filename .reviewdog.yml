@@ -1,0 +1,6 @@
+runner:
+  phpcs:
+    cmd: ./vendor/bin/phpcs --standard=./phpcs.xml --report=emacs ./src/PhpSampleWarningForPHPCS.php
+    errorformat:
+      - "%f:%l:%c: %trror - %m"
+      - "%f:%l:%c: %tarning - %m"

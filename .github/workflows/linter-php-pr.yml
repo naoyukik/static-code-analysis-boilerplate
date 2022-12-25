@@ -16,5 +16,4 @@ jobs:
         env:
           REVIEWDOG_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          ./vendor/bin/phpcs --standard=./phpcs.xml --report=emacs ./src/PhpSample.php \
-            | ./bin/reviewdog -efm='%f:%l:%c:%m' -reporter=github-pr-review
+          reviewdog -conf=./.reviewdog.yml -reporter=github-pr-check
