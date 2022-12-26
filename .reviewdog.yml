@@ -1,6 +1,6 @@
 runner:
   phpcs:
-    cmd: ./vendor/bin/phpcs --standard=./phpcs.xml --report=emacs ./src/PhpSampleWarningForPHPCS.php
+    cmd: ./vendor/bin/phpcs --runtime-set ignore_warnings_on_exit 1 --standard=./phpcs.xml --report=emacs ./src/PhpSampleWarningForPHPCS.php
     errorformat:
       - "%f:%l:%c: %trror - %m"
       - "%f:%l:%c: %tarning - %m"
