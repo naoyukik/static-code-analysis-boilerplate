@@ -1,11 +1,30 @@
-# custom-rules-for-static-code-analysis
+# Custom rules for static code analysis
 
-## initial
+## PHP解析サンプル実行方法
+### Docker起動
 ```bash
 cp .env.example .env
-docker compose up -d 
+# Change `COMPOSE_PROJECT_NAME` in .env
+docker compose up -d php
 ```
-Change `COMPOSE_PROJECT_NAME` in .env
+### 各種解析ツール実行
+```bash
+make phpcs
+make psalm
+make phpmd
+```
+
+## JS解析サンプル実行方法
+```bash
+cp .env.example .env
+# Change `COMPOSE_PROJECT_NAME` in .env
+docker compose up -d js
+```
+### 各種解析ツール実行
+```bash
+make eslint
+make textlint
+```
 
 ## コーディング規約方針
 ### PHP
