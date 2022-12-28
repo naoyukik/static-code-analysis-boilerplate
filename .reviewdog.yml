@@ -4,3 +4,4 @@ runner:
     errorformat:
       - "%f:%l:%c: %trror - %m"
       - "%f:%l:%c: %tarning - %m"
+    level: warning
