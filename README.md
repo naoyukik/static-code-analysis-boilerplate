@@ -26,6 +26,18 @@ make eslint
 make textlint
 ```
 
+## JS解析サンプル実行方法
+```bash
+cp .env.example .env
+# Change `COMPOSE_PROJECT_NAME` in .env
+docker compose up -d js
+```
+### 各種解析ツール実行
+```bash
+make eslint
+make textlint
+```
+
 ## コーディング規約
 ### PHP
 ルールセットはCakePHP Code Sniffer（PSR-12準拠）をベースに構築しています。
