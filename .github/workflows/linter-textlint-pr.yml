@@ -1,7 +1,7 @@
-name: "textlint"
+name: "textlint on PR"
 
 on:
-  push:
+  pull_request:
 
 jobs:
   eslint:
@@ -15,7 +15,7 @@ jobs:
         run: npm install
       - name: Reviewdog Install
         run: curl -sfL https://raw.githubusercontent.com/reviewdog/reviewdog/master/install.sh| sh -s -- -b ./bin
-      - name: Run PHPCS
+      - name: Run textlint
         env:
           REVIEWDOG_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: ./bin/reviewdog -conf=./.reviewdog.yml -runners=textlint -reporter=github-pr-check
