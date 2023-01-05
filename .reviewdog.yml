@@ -11,5 +11,6 @@ runner:
       - "%E%f: line %l, col %c, Error - %m"
       - "%C%m"
   deno_lint:
-    cmd: deno lint --json ./src/ESLintSample.ts
-    format: rdjson
+    cmd: deno lint --compact ./src/ESLintSample.ts
+    errorformat:
+      - "%E%f: line %l, col %c - %m"
