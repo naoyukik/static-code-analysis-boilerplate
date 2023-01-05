@@ -12,3 +12,4 @@ runner:
       - "%C%m"
   deno_lint:
     cmd: deno lint --json ./src/ESLintSample.ts
+    format: rdjson
