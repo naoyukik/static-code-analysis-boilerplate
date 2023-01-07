@@ -10,7 +10,9 @@ runner:
     errorformat:
       - "%E%f: line %l, col %c, Error - %m"
       - "%C%m"
+    level: warning
   deno_lint:
     cmd: /home/runner/.deno/bin/deno lint --compact ./src/ESLintSample.ts
     errorformat:
       - "%E%f: line %l, col %c - %m"
+    level: warning
