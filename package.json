@@ -5,8 +5,8 @@
   "scripts": {
     "lint": "eslint '{src/**/*,*}.{js,ts,jsx,tsx,vue}'",
     "lint:sarif": "eslint -f @microsoft/eslint-formatter-sarif -o eslint_results.sarif '{src/**/*,*}.{js,ts,jsx,tsx,vue}'",
-    "textlint": "textlint --stdin -f compact src/**/*.md || true",
-    "daggar:textlint": "node --loader ts-node/esm ./build.ts"
+    "textlint": "textlint -f compact src/**/*.md || true",
+    "dagger:textlint": "node --loader ts-node/esm ./build.ts"
   },
   "keywords": [
     "ESLint",

@@ -4,7 +4,7 @@ on:
   push:
 
 jobs:
-  eslint:
+  textlint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -16,3 +16,15 @@ jobs:
       - run: echo "::add-matcher::.github/problem-matcher.json"
       - name: Run textlint
         run: npm run textlint || true
+  textlint_dagger:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Run npm install
+        run: npm install
+      - run: echo "::add-matcher::.github/problem-matcher.json"
+      - name: Run textlint
+        run: npm run dagger:textlint || true
