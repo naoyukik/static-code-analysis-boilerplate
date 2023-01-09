@@ -1,4 +1,4 @@
-name: "textlint"
+name: "textlint on Dagger"
 
 on:
   push:
@@ -13,6 +13,9 @@ jobs:
           node-version: 18
       - name: Run npm install
         run: npm install
-      - run: echo "::add-matcher::.github/problem-matcher.json"
-      - name: Run textlint
-        run: npm run dagger:textlint || true
+      - name: Reviewdog Install
+        run: curl -sfL https://raw.githubusercontent.com/reviewdog/reviewdog/master/install.sh| sh -s -- -b ./bin
+      - name: Run textlint on Dagger
+        env:
+          REVIEWDOG_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: ./bin/reviewdog -conf=./.reviewdog.yml -runners=textlint_dagger -reporter=github-check -filter-mode=nofilter
