@@ -22,3 +22,6 @@ runner:
       - "%E%f: line %l, col %c, Error - %m"
       - "%C%m"
     level: warning
+  eslint_dagger:
+    cmd: npm run dagger:eslint
+    level: warning
