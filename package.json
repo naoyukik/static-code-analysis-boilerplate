@@ -3,10 +3,11 @@
   "version": "1.2.0",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint '{src/**/*,*}.{js,ts,jsx,tsx,vue}'",
+    "lint": "eslint '{src/**/*,*}.{js,ts,jsx,tsx,vue}' || true",
     "lint:sarif": "eslint -f @microsoft/eslint-formatter-sarif -o eslint_results.sarif '{src/**/*,*}.{js,ts,jsx,tsx,vue}'",
     "textlint": "textlint -f compact src/**/*.md || true",
-    "dagger:textlint": "node --loader ts-node/esm ./build.ts"
+    "dagger:textlint": "node --loader ts-node/esm ./.dagger/textlint.ts",
+    "dagger:eslint": "node --loader ts-node/esm ./.dagger/eslint.ts"
   },
   "keywords": [
     "ESLint",
