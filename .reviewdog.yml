@@ -24,4 +24,8 @@ runner:
     level: warning
   eslint_dagger:
     cmd: npm run dagger:eslint
+    errorformat:
+      - "%+P%f"
+      - "%E %#%l:%c %#error %#%m"
+      - "%W %#%l:%c %#warning %#%m"
     level: warning
