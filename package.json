@@ -7,6 +7,7 @@
     "lint:sarif": "eslint -f @microsoft/eslint-formatter-sarif -o eslint_results.sarif '{src/**/*,*}.{js,ts,jsx,tsx,vue}'",
     "textlint": "textlint -f compact src/**/*.md || true",
     "dagger:textlint": "node --loader ts-node/esm ./.dagger/textlint.ts",
+    "dagger:textlint:reviewdog": "node --loader ts-node/esm ./.dagger/textlint-with-reviewdog.ts",
     "dagger:eslint": "node --loader ts-node/esm ./.dagger/eslint.ts"
   },
   "keywords": [
