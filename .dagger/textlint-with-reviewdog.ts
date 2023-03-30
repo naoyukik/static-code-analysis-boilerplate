@@ -15,7 +15,9 @@ connect(async (client: Client) => {
   const runner = node
     .withMountedDirectory('/app', source)
     .withExec(['pnpm', 'install'])
-    .withExec(['./bin/reviewdog', '-conf=./.reviewdog.yml', '-runners=textlint', '-diff=/usr/bin/git diff main']);
+    .withExec(['printenv'])
+    // .withExec(['./bin/reviewdog', '-conf=./.reviewdog.yml', '-runners=textlint_dagger', '-reporter=github-check', '-filter-mode=nofilter']);
+    // .withExec(['./bin/reviewdog', '-conf=./.reviewdog.yml', '-runners=textlint', '-diff=/usr/bin/git diff main']);
 
   // execute
   const textlintResult = await runner.stdout();
