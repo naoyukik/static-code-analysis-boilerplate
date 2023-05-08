@@ -1,7 +1,11 @@
 import Client, { connect } from '@dagger.io/dagger';
+// import { Secret } from '@dagger.io/dagger/dist/api/client.gen'
 
 // initialize Dagger client
 connect(async (client: Client) => {
+  // read secret from host variable
+  // const secret: Secret = client.setSecret("gh-secret", <string>process.env["GH_SECRET"])
+
   const source = client.host().directory('.', { exclude: ['node_modules/'] });
   const node = client.container().from('bitnami/node:18')
     .withExec(['corepack', 'enable', 'pnpm'])
@@ -15,8 +19,9 @@ connect(async (client: Client) => {
   const runner = node
     .withMountedDirectory('/app', source)
     .withExec(['pnpm', 'install'])
-    .withExec(['printenv'])
-    // .withExec(['./bin/reviewdog', '-conf=./.reviewdog.yml', '-runners=textlint_dagger', '-reporter=github-check', '-filter-mode=nofilter']);
+    // .withExec(['echo', <string>process.env["GH_SECRET"]])
+    // .withExec(['printenv'])
+    .withExec(['REVIEWDOG_GITHUB_API_TOKEN=' + <string>process.env["REVIEWDOG_GITHUB_API_TOKEN"], './bin/reviewdog', '-conf=./.reviewdog.yml', '-runners=textlint_dagger', '-reporter=github-check', '-filter-mode=nofilter']);
     // .withExec(['./bin/reviewdog', '-conf=./.reviewdog.yml', '-runners=textlint', '-diff=/usr/bin/git diff main']);
 
   // execute
