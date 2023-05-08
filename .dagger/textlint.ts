@@ -8,8 +8,7 @@ connect(async (client: Client) => {
     .withExec(['corepack', 'prepare', 'pnpm@latest', '--activate']);
 
   // textlint
-  const runner = client
-    .container({ id: node })
+  const runner = node
     .withMountedDirectory('/app', source)
     .withExec(['pnpm', 'install'])
     .withExec(['pnpm', 'run', 'textlint']);
