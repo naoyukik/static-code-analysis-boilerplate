@@ -21,7 +21,7 @@ connect(async (client: Client) => {
     .withMountedDirectory('/app', source)
     .withExec(['pnpm', 'install'])
     .withSecretVariable('GITHUB_TOKEN', secret)
-    .withExec(['echo', <string>process.env["REVIEWDOG_GITHUB_API_TOKEN"]])
+    .withExec(['echo', "$GITHUB_TOKEN"])
     // .withExec(['printenv'])
     // .withExec(['REVIEWDOG_GITHUB_API_TOKEN=' + <string>process.env["REVIEWDOG_GITHUB_API_TOKEN"], './bin/reviewdog', '-conf=./.reviewdog.yml', '-runners=textlint_dagger', '-reporter=github-check', '-filter-mode=nofilter']);
     // .withExec(["REVIEWDOG_GITHUB_API_TOKEN=$GITHUB_TOKEN", './bin/reviewdog', '-conf=./.reviewdog.yml', '-runners=textlint', '-reporter=github-check', '-filter-mode=nofilter']);
