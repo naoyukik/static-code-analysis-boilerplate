@@ -7,6 +7,8 @@
     <exclude-pattern>\.git</exclude-pattern>
     <exclude-pattern>/*/tmp/</exclude-pattern>
     <exclude-pattern>tests/*/templates/*</exclude-pattern>
+    <exclude-pattern>vendor/</exclude-pattern>
+    <exclude-pattern>node_modules/</exclude-pattern>
 
     <!-- PSR12 Standard -->
     <rule ref="PSR12">
