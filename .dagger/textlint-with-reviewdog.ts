@@ -21,10 +21,14 @@ connect(async (client: Client) => {
     .withMountedDirectory('/app', source)
     .withExec(['pnpm', 'install'])
     // .withSecretVariable('GITHUB_TOKEN', secret)
-    // .withExec(['echo', "$GITHUB_TOKEN"])
-    .withEnvVariable('REVIEWDOG_GITHUB_API_TOKEN', <string>process.env["REVIEWDOG_GITHUB_API_TOKEN"])
-    // .withExec(['printenv'])
-    // .withExec(['REVIEWDOG_GITHUB_API_TOKEN=' + <string>process.env["REVIEWDOG_GITHUB_API_TOKEN"], './bin/reviewdog', '-conf=./.reviewdog.yml', '-runners=textlint_dagger', '-reporter=github-check', '-filter-mode=nofilter']);
+    .withEnvVariable('REVIEWDOG_GITHUB_API_TOKEN', <string>process.env["GITHUB_API_TOKEN"])
+    .withEnvVariable('CI_REPO_OWNER', <string>process.env["CI_REPO_OWNER"])
+    .withEnvVariable('CI_REPO_NAME', <string>process.env["CI_REPO_NAME"])
+    .withEnvVariable('CI_COMMIT', <string>process.env["CI_COMMIT"])
+    // .withExec(['echo', <string>process.env["GITHUB_API_TOKEN"]])
+    // .withExec(['echo', <string>process.env["github"]])
+    // .withEnvVariable('REVIEWDOG_GITHUB_API_TOKEN', <string>process.env["GITHUB_API_TOKEN"])
+    // .withExec(['REVIEWDOG_GITHUB_API_TOKEN=' + <string>process.env["REVIEWDOG_GITHUB_API_TOKEN"], './bin/reviewdog', '-conf=./.reviewdog.yml', '-runners=textlint', '-reporter=github-check', '-filter-mode=nofilter']);
     .withExec(['./bin/reviewdog', '-conf=./.reviewdog.yml', '-runners=textlint', '-reporter=github-check', '-filter-mode=nofilter']);
     // .withExec(['./bin/reviewdog', '-conf=./.reviewdog.yml', '-runners=textlint', '-diff=/usr/bin/git diff main']);
 
@@ -34,3 +38,4 @@ connect(async (client: Client) => {
   // print output
   console.log(textlintResult);
 });
+
