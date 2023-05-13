@@ -1,3 +1,5 @@
+megalinter-php:
+	mega-linter-runner -f php
 psalm:
 	docker compose -f ./docker-compose.yml exec -T app vendor/bin/psalm --no-cache -c ./psalm.xml
 phpcs:
