@@ -32,6 +32,6 @@ jobs:
         env:
           GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           CI_REPO_OWNER: ${{ github.repository_owner }}
-          CI_REPO_NAME: ${{ github.event.repository.name }}
+          CI_REPO_NAME: custom-rules-for-static-code-analysis
           CI_COMMIT: ${{ github.sha }}
-        run: npm run dagger:textlint:reviewdog
+        run: node --loader ts-node/esm ./.dagger/textlint-with-reviewdog.ts

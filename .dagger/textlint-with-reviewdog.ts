@@ -29,7 +29,7 @@ connect(async (client: Client) => {
     // .withExec(['echo', <string>process.env["github"]])
     // .withEnvVariable('REVIEWDOG_GITHUB_API_TOKEN', <string>process.env["GITHUB_API_TOKEN"])
     // .withExec(['REVIEWDOG_GITHUB_API_TOKEN=' + <string>process.env["REVIEWDOG_GITHUB_API_TOKEN"], './bin/reviewdog', '-conf=./.reviewdog.yml', '-runners=textlint', '-reporter=github-check', '-filter-mode=nofilter']);
-    .withExec(['./bin/reviewdog', '-conf=./.reviewdog.yml', '-runners=textlint', '-reporter=github-check', '-filter-mode=nofilter']);
+    .withExec(['./bin/reviewdog', '-conf=./.reviewdog.yml', '-runners=textlint', '-reporter=github-check', '-filter-mode=nofilter', '-tee']);
     // .withExec(['./bin/reviewdog', '-conf=./.reviewdog.yml', '-runners=textlint', '-diff=/usr/bin/git diff main']);
 
   // execute
