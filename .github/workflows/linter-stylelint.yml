@@ -1,4 +1,4 @@
-name: "ESLint analysis"
+name: "Stylelint analysis"
 
 on:
   push:
@@ -13,5 +13,5 @@ jobs:
           node-version: 18
       - name: Run npm install
         run: npm install
-      - name: Run ESLint
+      - name: Run Stylelint
         run: npm run stylelint || true
