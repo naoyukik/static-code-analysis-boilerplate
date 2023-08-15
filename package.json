@@ -8,7 +8,9 @@
     "textlint": "textlint -f compact src/**/*.md || true",
     "stylelint": "stylelint -f github src/**/*.scss || true",
     "dagger:textlint": "node --loader ts-node/esm ./.dagger/textlint.ts",
-    "dagger:eslint": "node --loader ts-node/esm ./.dagger/eslint.ts"
+    "dagger:eslint": "node --loader ts-node/esm ./.dagger/eslint.ts",
+    "html:lint": "markuplint -f github --locale ja-jp ./src/MarkuplintSample.html",
+    "win:html:lint": "markuplint -f github --locale ja-jp ./src/MarkuplintSample.html 2>&1 | sed 's@/home/naoyukik/projects/static-code-analysis-boilerplate/@./@g'"
   },
   "keywords": [
     "ESLint",
@@ -30,6 +32,7 @@
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "install-peerdeps": "^3.0.3",
+    "markuplint": "^3.12.0",
     "postcss": "^8.4.24",
     "stylelint": "^15.7.0",
     "stylelint-config-recess-order": "^4.2.0",
@@ -48,5 +51,7 @@
   "volta": {
     "node": "16.19.0"
   },
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+  }
 }
