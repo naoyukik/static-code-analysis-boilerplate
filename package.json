@@ -41,7 +41,7 @@
     "textlint-rule-ja-no-redundant-expression": "^4.0.1",
     "textlint-rule-ja-no-weak-phrase": "^2.0.0",
     "textlint-rule-preset-jtf-style": "^2.3.13",
-    "textlint-rule-prh": "^5.3.0",
+    "textlint-rule-prh": "^6.0.0",
     "ts-node": "^10.9.1",
     "typescript": "^4.9.5"
   },
