@@ -14,8 +14,8 @@ connect(async (client: Client) => {
     .withExec(['pnpm', 'run', 'textlint']);
 
   // execute
-  const textlintResult = await runner.stdout();
+  const result = await runner.stdout();
 
   // print output
-  console.log(textlintResult);
+  console.log(result);
 });

@@ -1,0 +1,17 @@
+name: "Stylelint analysis"
+
+on:
+  push:
+
+jobs:
+  Stylelint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Run npm install
+        run: npm install
+      - name: Run Stylelint
+        run: npm run stylelint || true
