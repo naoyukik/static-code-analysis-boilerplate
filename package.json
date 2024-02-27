@@ -5,10 +5,7 @@
   "scripts": {
     "lint": "eslint '{src/**/*,*}.{js,ts,jsx,tsx,vue}' || true",
     "lint:sarif": "eslint -f @microsoft/eslint-formatter-sarif -o eslint_results.sarif '{src/**/*,*}.{js,ts,jsx,tsx,vue}'",
-    "lint:npm": "npx @biomejs/biome lint ./src || true",
-    "format:npm": "npx @biomejs/biome format --write ./src || true",
-    "lint:pnpm": "pnpm dlx @biomejs/biome lint ./src || true",
-    "format:pnpm": "pnpm dlx @biomejs/biome format --write ./src || true",
+    "lint:biome": "biome lint ./src || true",
     "textlint": "textlint -f compact src/**/*.md || true",
     "stylelint": "stylelint -f github src/**/*.scss || true",
     "dagger:textlint": "node --loader ts-node/esm ./.dagger/textlint.ts",
