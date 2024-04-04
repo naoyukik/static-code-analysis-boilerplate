@@ -20,7 +20,7 @@
   "author": "naoyukik",
   "license": "MIT",
   "devDependencies": {
-    "@biomejs/biome": "1.5.3",
+    "@biomejs/biome": "1.6.4",
     "@dagger.io/dagger": "^0.9.11",
     "@typescript-eslint/eslint-plugin": "^6.21.0",
     "@typescript-eslint/parser": "^6.21.0",
