@@ -43,7 +43,7 @@ class PhpAllSample
      * @param string $str string
      * @param array $arr
      */
-    function foo_Bar(int $integer, $str, $arr) {
+    function foo_Bar(int $integer, string $str, array $arr) {
         $file = @fopen($filPath); // hides exceptions
         $key = @$array[$notExistingKey]; // assigns null to $key
         return new \stdClass();
