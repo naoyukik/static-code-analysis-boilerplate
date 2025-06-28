@@ -1,4 +1,4 @@
-FROM bitnami/php-fpm:8.1 as base_php
+FROM bitnami/php-fpm:8.4.8 as base_php
 SHELL ["/bin/bash", "-oeux", "pipefail", "-c"]
 
 # timezone environment
@@ -11,7 +11,7 @@ ENV TZ=UTC \
   COMPOSER_ALLOW_SUPERUSER=1 \
   COMPOSER_HOME=/composer
 
-COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+COPY --from=composer:2.8.9 /usr/bin/composer /usr/bin/composer
 COPY docker/php/entrypoint.sh /entrypoint.sh
 
 RUN apt-get update \
@@ -23,7 +23,7 @@ RUN localedef -f UTF-8 -i en_US en_US.UTF-8
 RUN mkdir /var/run/php-fpm
 RUN composer config -g process-timeout 3600
 RUN mkdir /entrypoint.d
-RUN chmod 777 /entrypoint.d
+RUN chmod 755 /entrypoint.d
 RUN chmod +x /entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh"]

@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint || true",
-    "lint:sarif": "eslint -f @microsoft/eslint-formatter-sarif -o eslint_results.sarif '{src/**/*,*}.{js,ts,jsx,tsx,vue}'",
+    "lint:sarif": "eslint -f @microsoft/eslint-formatter-sarif -o eslint_results.sarif",
     "lint:biome": "biome lint ./src || true",
     "textlint": "textlint -f compact src/**/*.md || true",
     "stylelint": "stylelint -f github src/**/*.scss || true",
