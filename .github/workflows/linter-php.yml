@@ -7,7 +7,7 @@ jobs:
   PHP_CodeSniffer:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
       - name: Run Composer Install
         run: composer install
       - run: echo "::add-matcher::.github/problem-matcher.json"
@@ -16,7 +16,7 @@ jobs:
   Psalm:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
       - name: Run Composer Install
         run: composer install
       - name: Run Psalm
@@ -24,7 +24,7 @@ jobs:
   PHP_Mess_Detector:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
       - name: Run Composer Install
         run: composer install
       - name: Run PHPMD
