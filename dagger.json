@@ -1,0 +1,8 @@
+{
+  "name": "lint",
+  "engineVersion": "v0.18.12",
+  "sdk": {
+    "source": "typescript"
+  },
+  "source": ".dagger"
+}
