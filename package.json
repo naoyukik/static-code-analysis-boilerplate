@@ -8,7 +8,6 @@
     "lint:biome": "biome lint ./src || true",
     "textlint": "textlint -f compact src/**/*.md || true",
     "stylelint": "stylelint -f github src/**/*.scss || true",
-    "dagger:textlint": "node --loader ts-node/esm ./.dagger/textlint.ts",
     "dagger:eslint": "node --loader ts-node/esm ./.dagger/eslint.ts"
   },
   "keywords": [
