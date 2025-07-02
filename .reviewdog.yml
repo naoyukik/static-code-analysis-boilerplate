@@ -17,13 +17,13 @@ runner:
       - "%E%f: line %l, col %c - %m"
     level: warning
   textlint_dagger:
-    cmd: npm run dagger:textlint
+    cmd: dagger -c 'textlint .'
     errorformat:
       - "%E%f: line %l, col %c, Error - %m"
       - "%C%m"
     level: warning
   eslint_dagger:
-    cmd: npm run dagger:eslint
+    cmd: dagger -q -c 'eslint .'
     errorformat:
       - "%+P%f"
       - "%E %#%l:%c %#error %#%m"
