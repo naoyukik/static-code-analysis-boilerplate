@@ -16,7 +16,7 @@ services:
       - XDEBUG_CLIENT_PORT=${XDEBUG_CLIENT_PORT}
       - XDEBUG_IDEKEY=${XDEBUG_IDEKEY}
   qodana:
-    image: jetbrains/qodana-php:2022.3-eap
+    image: jetbrains/qodana-php:2025.1-eap
     ports:
       - 8080:8080
     volumes:
