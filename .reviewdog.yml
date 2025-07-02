@@ -23,7 +23,7 @@ runner:
       - "%C%m"
     level: warning
   eslint_dagger:
-    cmd: npm run dagger:eslint
+    cmd: dagger -q -c 'eslint .'
     errorformat:
       - "%+P%f"
       - "%E %#%l:%c %#error %#%m"
