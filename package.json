@@ -5,10 +5,9 @@
   "scripts": {
     "lint": "eslint || true",
     "lint:sarif": "eslint -f @microsoft/eslint-formatter-sarif -o eslint_results.sarif",
-    "lint:biome": "biome lint ./src || true",
+    "lint:biome": "biome ci ./src --reporter=github || true",
     "textlint": "textlint -f compact src/**/*.md || true",
     "stylelint": "stylelint -f github src/**/*.scss || true",
-    "dagger:textlint": "node --loader ts-node/esm ./.dagger/textlint.ts",
     "dagger:eslint": "node --loader ts-node/esm ./.dagger/eslint.ts"
   },
   "keywords": [
@@ -20,7 +19,7 @@
   "license": "MIT",
   "devDependencies": {
     "@biomejs/biome": "^2.0.5",
-    "@dagger.io/dagger": "^0.18.11",
+    "@dagger.io/dagger": "^0.18.12",
     "@eslint/js": "^9.29.0",
     "@typescript-eslint/eslint-plugin": "^8.35.0",
     "@typescript-eslint/parser": "^8.35.0",
