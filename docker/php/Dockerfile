@@ -1,4 +1,4 @@
-FROM bitnami/php-fpm:8.4.10 as base_php
+FROM bitnami/php-fpm:8.4.11 as base_php
 SHELL ["/bin/bash", "-oeux", "pipefail", "-c"]
 
 # timezone environment
