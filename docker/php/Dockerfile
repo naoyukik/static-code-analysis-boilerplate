@@ -11,7 +11,7 @@ ENV TZ=UTC \
   COMPOSER_ALLOW_SUPERUSER=1 \
   COMPOSER_HOME=/composer
 
-COPY --from=composer:2.8.12 /usr/bin/composer /usr/bin/composer
+COPY --from=composer:2.9.3 /usr/bin/composer /usr/bin/composer
 COPY docker/php/entrypoint.sh /entrypoint.sh
 
 RUN apt-get update \
